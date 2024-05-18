@@ -156,6 +156,7 @@ services:
     user: root
     command:
       # Log to stderr.
+      - setup
       - -e
       # Disable config file permissions checks. Allows mounting
       # 'config/filebeat.yml' even if it's not owned by root.
