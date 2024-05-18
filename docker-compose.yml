@@ -228,8 +228,6 @@ services:
         args:
           ELASTIC_VERSION: ${ELASTIC_VERSION}
       command:
-        - filebeat -e
-        - filebeat setup
         # Log to stderr.
         - -e
         # Disable config file permissions checks. Allows mounting
@@ -237,6 +235,9 @@ services:
         # see: https://www.elastic.co/guide/en/beats/libbeat/current/config-file-permissions.html
         - --strict.perms=false
         - --setup.ilm.overwrite=true
+        - filebeat -e
+        - filebeat setup
+        - setup
       volumes:
         - ./extensions/heartbeat/config/heartbeat.yml:/usr/share/heartbeat/heartbeat.yml:ro,Z
       environment:
