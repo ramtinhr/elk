@@ -228,6 +228,8 @@ services:
         args:
           ELASTIC_VERSION: ${ELASTIC_VERSION}
       command:
+        - filebeat -e
+        - filebeat setup
         # Log to stderr.
         - -e
         # Disable config file permissions checks. Allows mounting
