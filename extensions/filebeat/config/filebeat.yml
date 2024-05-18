@@ -49,5 +49,8 @@ output.elasticsearch:
 ## https://www.elastic.co/guide/en/beats/filebeat/current/http-endpoint.html
 #
 
+setup.kibana:
+  host: "http://kibana:5601"
+  
 http:
   enabled: true
